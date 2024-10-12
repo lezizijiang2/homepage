@@ -455,28 +455,45 @@ function Home({ initialSettings }) {
 
 export default function Wrapper({ initialSettings, fallback }) {
   const wrappedStyle = {};
+  const wallpaperStyle = {};
   let backgroundBlur = false;
   let backgroundSaturate = false;
   let backgroundBrightness = false;
+  let backgroundVideo = null
   if (initialSettings && initialSettings.background) {
     let opacity = initialSettings.backgroundOpacity ?? 1;
     let backgroundImage = initialSettings.background;
     if (typeof initialSettings.background === "object") {
       backgroundImage = initialSettings.background.image;
+      backgroundVideo = initialSettings.background.video;
       backgroundBlur = initialSettings.background.blur !== undefined;
       backgroundSaturate = initialSettings.background.saturate !== undefined;
       backgroundBrightness = initialSettings.background.brightness !== undefined;
       if (initialSettings.background.opacity !== undefined) opacity = initialSettings.background.opacity / 100;
     }
     const opacityValue = 1 - opacity;
-    wrappedStyle.backgroundImage = `
-      linear-gradient(
-        rgb(var(--bg-color) / ${opacityValue}),
-        rgb(var(--bg-color) / ${opacityValue})
-      ),
-      url('${backgroundImage}')`;
-    wrappedStyle.backgroundPosition = "center";
-    wrappedStyle.backgroundSize = "cover";
+    if (backgroundImage) {
+      wrappedStyle.backgroundImage = `
+        linear-gradient(
+          rgb(var(--bg-color) / ${opacityValue}),
+          rgb(var(--bg-color) / ${opacityValue})
+        ),
+        url('${backgroundImage}')`;
+      wrappedStyle.backgroundPosition = "center";
+      wrappedStyle.backgroundSize = "cover";
+    }
+    if (backgroundVideo) {
+      wallpaperStyle.zIndex = -2;
+      wallpaperStyle.position = 'absolute';
+      wallpaperStyle.width = '100%'
+      wallpaperStyle.height = '100%';
+      wallpaperStyle.objectFit = 'cover';
+      wallpaperStyle.transition = 'opacity 1s,transform .25s,filter .25s';
+      wallpaperStyle.display = 'block';
+      wallpaperStyle.opacity = 1;
+    } else {
+      wallpaperStyle.display = 'none';
+    }
   }
 
   return (
@@ -507,6 +524,7 @@ export default function Wrapper({ initialSettings, fallback }) {
           <Index initialSettings={initialSettings} fallback={fallback} />
         </div>
       </div>
+      <video src={backgroundVideo} autoPlay loop muted style={wallpaperStyle} />
     </div>
   );
 }
