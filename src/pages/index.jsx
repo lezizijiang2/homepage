@@ -524,7 +524,7 @@ export default function Wrapper({ initialSettings, fallback }) {
           <Index initialSettings={initialSettings} fallback={fallback} />
         </div>
       </div>
-      <video src={backgroundVideo} autoPlay loop muted style={wallpaperStyle} />
+      {backgroundVideo && (<video src={backgroundVideo} autoPlay loop muted style={wallpaperStyle} />)}
     </div>
   );
 }
