@@ -516,14 +516,18 @@ export default function Wrapper({ initialSettings, fallback }) {
   const { theme } = useContext(ThemeContext);
   const { color } = useContext(ColorContext);
   let backgroundImage = "";
+  let backgroundVideo = null;
   let opacity = initialSettings?.backgroundOpacity ?? 0;
   let backgroundBlur = false;
   let backgroundSaturate = false;
   let backgroundBrightness = false;
+  const wallpaperStyle = {};
+
   if (initialSettings?.background) {
     const bg = initialSettings.background;
     if (typeof bg === "object") {
       backgroundImage = bg.image || "";
+      backgroundVideo = bg.video;
       if (bg.opacity !== undefined) {
         opacity = 1 - bg.opacity / 100;
       }
@@ -533,6 +537,19 @@ export default function Wrapper({ initialSettings, fallback }) {
     } else {
       backgroundImage = bg;
     }
+  }
+
+  if (backgroundVideo) {
+    wallpaperStyle.zIndex = -2;
+    wallpaperStyle.position = "absolute";
+    wallpaperStyle.width = "100%";
+    wallpaperStyle.height = "100%";
+    wallpaperStyle.objectFit = "cover";
+    wallpaperStyle.transition = "opacity 1s,transform .25s,filter .25s";
+    wallpaperStyle.display = "block";
+    wallpaperStyle.opacity = 1;
+  } else {
+    wallpaperStyle.display = "none";
   }
 
   useEffect(() => {
@@ -586,6 +603,7 @@ export default function Wrapper({ initialSettings, fallback }) {
           <Index initialSettings={initialSettings} fallback={fallback} />
         </div>
       </div>
+      <video src={backgroundVideo} autoPlay loop muted style={wallpaperStyle} />
     </>
   );
 }
