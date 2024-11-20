@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 const components = {
   adguard: dynamic(() => import("./adguard/component")),
+  argocd: dynamic(() => import("./argocd/component")),
   atsumeru: dynamic(() => import("./atsumeru/component")),
   audiobookshelf: dynamic(() => import("./audiobookshelf/component")),
   authentik: dynamic(() => import("./authentik/component")),
@@ -95,6 +96,7 @@ const components = {
   plex: dynamic(() => import("./plex/component")),
   portainer: dynamic(() => import("./portainer/component")),
   prometheus: dynamic(() => import("./prometheus/component")),
+  prometheusmetric: dynamic(() => import("./prometheusmetric/component")),
   prowlarr: dynamic(() => import("./prowlarr/component")),
   proxmox: dynamic(() => import("./proxmox/component")),
   pterodactyl: dynamic(() => import("./pterodactyl/component")),
@@ -113,6 +115,7 @@ const components = {
   stocks: dynamic(() => import("./stocks/component")),
   strelaysrv: dynamic(() => import("./strelaysrv/component")),
   swagdashboard: dynamic(() => import("./swagdashboard/component")),
+  suwayomi: dynamic(() => import("./suwayomi/component")),
   tailscale: dynamic(() => import("./tailscale/component")),
   tandoor: dynamic(() => import("./tandoor/component")),
   tautulli: dynamic(() => import("./tautulli/component")),

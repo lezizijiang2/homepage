@@ -309,6 +309,16 @@
         "stopped": "Stopped",
         "total": "Total"
     },
+    "suwayomi": {
+      "download": "Downloaded",
+      "nondownload": "Non-Downloaded",
+      "read": "Read",
+      "unread": "Unread",
+      "downloadedread": "Downloaded & Read",
+      "downloadedunread": "Downloaded & Unread",
+      "nondownloadedread": "Non-Downloaded & Read",
+      "nondownloadedunread": "Non-Downloaded & Unread"
+    },
     "tailscale": {
         "address": "Address",
         "expires": "Expires",
@@ -978,5 +988,15 @@
       "memory": "MEM",
       "disk": "Disk",
       "network": "NET"
+    },
+    "argocd": {
+        "apps": "Apps",
+        "synced": "Synced",
+        "outOfSync": "Out Of Sync",
+        "healthy": "Healthy",
+        "degraded": "Degraded",
+        "progressing": "Progressing",
+        "missing": "Missing",
+        "suspended": "Suspended"
     }
 }
