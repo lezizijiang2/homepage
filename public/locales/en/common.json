@@ -919,6 +919,11 @@
       "warnings": "Warnings",
       "criticals": "Criticals"
     },
+    "newapi": {
+      "todayQuota": "Today",
+      "todayTokens": "Today Tokens",
+      "todayRequests": "Today Reqs"
+    },
     "plantit": {
         "events": "Events",
         "plants": "Plants",

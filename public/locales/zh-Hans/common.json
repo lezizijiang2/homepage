@@ -916,6 +916,11 @@
         "warnings": "警告",
         "criticals": "严重"
     },
+    "newapi": {
+        "todayQuota": "今日消耗",
+        "todayTokens": "今日Token",
+        "todayRequests": "今日请求"
+    },
     "plantit": {
         "events": "事件",
         "plants": "植物",

@@ -89,6 +89,7 @@ const components = {
   navidrome: dynamic(() => import("./navidrome/component")),
   netalertx: dynamic(() => import("./netalertx/component")),
   netdata: dynamic(() => import("./netdata/component")),
+  newapi: dynamic(() => import("./newapi/component")),
   nextcloud: dynamic(() => import("./nextcloud/component")),
   nextdns: dynamic(() => import("./nextdns/component")),
   npm: dynamic(() => import("./npm/component")),

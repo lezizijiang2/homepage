@@ -80,6 +80,7 @@ import myspeed from "./myspeed/widget";
 import navidrome from "./navidrome/widget";
 import netalertx from "./netalertx/widget";
 import netdata from "./netdata/widget";
+import newapi from "./newapi/widget";
 import nextcloud from "./nextcloud/widget";
 import nextdns from "./nextdns/widget";
 import npm from "./npm/widget";
@@ -237,6 +238,7 @@ const widgets = {
   navidrome,
   netalertx,
   netdata,
+  newapi,
   nextcloud,
   nextdns,
   npm,
