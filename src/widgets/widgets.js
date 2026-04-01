@@ -18,6 +18,7 @@ import calibreweb from "./calibreweb/widget";
 import changedetectionio from "./changedetectionio/widget";
 import channelsdvrserver from "./channelsdvrserver/widget";
 import checkmk from "./checkmk/widget";
+import cliproxyapi from "./cliproxyapi/widget";
 import cloudflared from "./cloudflared/widget";
 import coinmarketcap from "./coinmarketcap/widget";
 import crowdsec from "./crowdsec/widget";
@@ -173,6 +174,7 @@ const widgets = {
   changedetectionio,
   channelsdvrserver,
   checkmk,
+  cliproxyapi,
   cloudflared,
   coinmarketcap,
   crowdsec,
