@@ -540,7 +540,6 @@ export default function Wrapper({ initialSettings, fallback }) {
   }
 
   if (backgroundVideo) {
-    wallpaperStyle.zIndex = -2;
     wallpaperStyle.position = "absolute";
     wallpaperStyle.width = "100%";
     wallpaperStyle.height = "100%";
